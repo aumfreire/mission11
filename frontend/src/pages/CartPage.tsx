@@ -78,14 +78,18 @@ function CartPage() {
               </ul>
 
               <div className="d-grid gap-2">
-                <button className="btn btn-dark" disabled={cart.length === 0}>
+                <button
+                  className="btn btn-dark"
+                  disabled={cart.length === 0}
+                  onClick={() => navigate('/bookstore')}
+                >
                   Checkout
                 </button>
                 <button
                   className="btn btn-outline-secondary"
-                  onClick={() => navigate("/bookstore")}
+                  onClick={() => navigate('/bookstore')}
                 >
-                  Continue Browsing
+                  Continue Shopping
                 </button>
               </div>
             </div>

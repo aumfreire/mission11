@@ -17,7 +17,7 @@ function CategoryFilter({
           `https://localhost:5000/BookStore/GetBookCategories`
         );
         const data = await response.json();
-        console.log('Fetched categories: ,data');
+        console.log('Fetched categories:', data);
         setCategories(data);
       } catch (error) {
         console.error(`Error fetching categories: ${error}`);
@@ -42,7 +42,7 @@ function CategoryFilter({
           <div key={c} className="category-item">
             <input
               type="checkbox"
-              id="{c}"
+              id={c}
               value={c}
               className="category-checkbox"
               onChange={handleCheckboxChange}

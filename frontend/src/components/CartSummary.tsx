@@ -4,7 +4,11 @@ import { useCart } from '../context/CartContext';
 const CartSummary = () => {
   const navigate = useNavigate();
   const { cart } = useCart();
-  const totalAmount = cart.reduce((sum, item) => sum + item.qtyAmount, 0);
+  const totalQty = cart.reduce((sum, item) => sum + item.qtyAmount, 0);
+  const totalAmount = cart.reduce(
+    (sum, item) => sum + item.qtyAmount * item.price,
+    0
+  );
 
   return (
     <div
@@ -18,12 +22,16 @@ const CartSummary = () => {
         cursor: 'pointer',
         display: 'flex',
         alignItems: 'center',
-        boxShadow: '0 2px 5px rgba(0,0,0,0,2)',
+        boxShadow: '0 2px 5px rgba(0, 0, 0, 0.2)',
         fontSize: '16px',
       }}
       onClick={() => navigate('/cart')}
     >
-      🛒 <strong> {totalAmount}</strong>
+      🛒{' '}
+      <strong>
+        {' '}
+        {totalQty} | ${totalAmount.toFixed(2)}
+      </strong>
     </div>
   );
 };
