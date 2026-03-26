@@ -18,13 +18,7 @@
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/obj/Debug/net8.0/mission11.API.MvcApplicationPartsAssemblyInfo.cache
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/obj/Debug/net8.0/staticwebassets.build.json
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/obj/Debug/net8.0/staticwebassets.development.json
-/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/obj/Debug/net8.0/staticwebassets/msbuild.mission11.API.Microsoft.AspNetCore.StaticWebAssets.props
-/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/obj/Debug/net8.0/staticwebassets/msbuild.build.mission11.API.props
-/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.mission11.API.props
-/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.mission11.API.props
-/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/obj/Debug/net8.0/staticwebassets.pack.json
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/obj/Debug/net8.0/scopedcss/bundle/mission11.API.styles.css
-/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/obj/Debug/net8.0/mission11.API.csproj.CopyComplete
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/obj/Debug/net8.0/mission11.API.dll
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/obj/Debug/net8.0/refint/mission11.API.dll
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/obj/Debug/net8.0/mission11.API.pdb
@@ -131,3 +125,10 @@
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/bin/Debug/net8.0/runtimes/win-arm64/native/e_sqlite3.dll
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/bin/Debug/net8.0/runtimes/win-x64/native/e_sqlite3.dll
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/bin/Debug/net8.0/runtimes/win-x86/native/e_sqlite3.dll
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/obj/Debug/net8.0/mission11.API.sourcelink.json
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/obj/Debug/net8.0/staticwebassets/msbuild.mission11.API.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/obj/Debug/net8.0/staticwebassets/msbuild.build.mission11.API.props
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.mission11.API.props
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.mission11.API.props
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/obj/Debug/net8.0/staticwebassets.pack.json
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/obj/Debug/net8.0/mission11.API.csproj.CopyComplete

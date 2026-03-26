@@ -13,7 +13,7 @@ namespace mission11.API.Controllers
         public BookStoreController(BookstoreContext temp) => _context = temp;
 
         [HttpGet("AllBooks")]
-        public IActionResult GetBooks(int pageSize = 10, int pageNum = 1, string? sortBy = null, string sortDir = "asc")
+        public IActionResult GetBooks(int pageSize = 10, int pageNum = 1, string? sortBy = null, string sortDir = "asc", [FromQuery] List<string>? bookCategories = null)
         {
             var query = _context.Books.AsQueryable();
 
@@ -25,6 +25,12 @@ namespace mission11.API.Controllers
 
             }
 
+            if (bookCategories != null && bookCategories.Any())
+            {
+                query = query.Where(b => bookCategories.Contains(b.Category));
+            }
+
+
             var totalNumBooks = query.Count();
 
 
@@ -33,7 +39,7 @@ namespace mission11.API.Controllers
             .Take(pageSize)
             .ToList();
 
-            
+
 
             var bookObject = new
             {
@@ -42,6 +48,30 @@ namespace mission11.API.Controllers
             };
 
             return Ok(bookObject);
+        }
+
+        [HttpGet("GetBookCategories")]
+        public IActionResult GetBookCategories()
+        {
+            var bookCategories = _context.Books
+                .Select(b => b.Category)
+                .Distinct()
+                .ToList();
+
+            return Ok(bookCategories);
+        }
+
+        [HttpGet("Book/{bookId}")]
+        public IActionResult GetBookById(int bookId)
+        {
+            var book = _context.Books.FirstOrDefault(b => b.BookId == bookId);
+
+            if (book == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(book);
         }
 
     }
