@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import type { Books } from '../types/books';
 import { useNavigate } from 'react-router-dom';
+import Pagination from './Paginations';
 
 function BookstoreList({
   selectedCategories,
@@ -90,92 +91,22 @@ function BookstoreList({
         </div>
       ))}
 
-      <div className="d-flex justify-content-center my-3">
-        <nav aria-label="Book pagination">
-          <ul className="pagination mb-0">
-            <li className={`page-item ${pageNum === 1 ? 'disabled' : ''}`}>
-              <button
-                className="page-link"
-                onClick={() => setPageNum(pageNum - 1)}
-              >
-                Previous
-              </button>
-            </li>
+      <Pagination
+        currentPage={pageNum}
+        totalPages={totalPages}
+        pageSize={pageSize}
+        sortBy={sortBy}
+        sortDir={sortDir}
+        onPageChange={setPageNum}
+        onPageSizeChange={(newSize) => {
+          setPageSize(newSize);
+          setPageNum(1);
+        }}
+        onSortByChange={setSortBy}
+        onSortDirChange={setSortDir}
 
-            {[...Array(totalPages)].map((_, i) => (
-              <li
-                className={`page-item ${pageNum === i + 1 ? 'active' : ''}`}
-                key={i + 1}
-              >
-                <button className="page-link" onClick={() => setPageNum(i + 1)}>
-                  {i + 1}
-                </button>
-              </li>
-            ))}
+      />
 
-            <li
-              className={`page-item ${pageNum === totalPages ? 'disabled' : ''}`}
-            >
-              <button
-                className="page-link"
-                onClick={() => setPageNum(pageNum + 1)}
-              >
-                Next
-              </button>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-      <div className="row g-3 align-items-end mt-1">
-        <div className="col-12 col-md-4">
-          <label className="form-label mb-1">Results per page</label>
-          <select
-            className="form-select"
-            value={pageSize}
-            onChange={(p) => {
-              setPageSize(Number(p.target.value));
-              setPageNum(1);
-            }}
-          >
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="20">20</option>
-          </select>
-        </div>
-
-        <div className="col-12 col-md-4">
-          <label className="form-label mb-1">Sort</label>
-          <select
-            className="form-select"
-            value={sortBy}
-            onChange={(e) => {
-              setSortBy(e.target.value);
-              setPageNum(1);
-            }}
-          >
-            <option value="none">None</option>
-            <option value="title">Title</option>
-          </select>
-        </div>
-
-        {sortBy === 'title' && (
-          <div className="col-12 col-md-4">
-            <label className="form-label mb-1">Direction</label>
-            <select
-              className="form-select"
-              value={sortDir}
-              onChange={(e) => {
-                setSortDir(e.target.value);
-                setPageNum(1);
-              }}
-            >
-              <option value="asc">A-Z</option>
-              <option value="desc">Z-A</option>
-            </select>
-          </div>
-        )}
-      </div>
       <br />
     </>
   );
