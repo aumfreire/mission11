@@ -51,7 +51,7 @@ const Pagination = ({ currentPage, totalPages, pageSize, sortBy, sortDir, onPage
                 </nav>
             </div>
 
-            <div className="row g-3 align-items-end mt-1">
+            <div className="row g-3 justify-content-center align-items-end mt-1">
                 <div className="col-12 col-md-4">
                     <label className="form-label mb-1">Results per page</label>
                     <select
@@ -99,6 +99,7 @@ const Pagination = ({ currentPage, totalPages, pageSize, sortBy, sortDir, onPage
                         </select>
                     </div>
                 )}</div>
+            <br />
         </>
     )
 }

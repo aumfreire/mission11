@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import type { Books } from '../types/books';
 import { useNavigate } from 'react-router-dom';
 import Pagination from './Paginations';
+import { fecthBooks } from '../api/BooksAPI';
 
 function BookstoreList({
   selectedCategories,
@@ -15,35 +16,31 @@ function BookstoreList({
   const [sortBy, setSortBy] = useState<string>('none');
   const [sortDir, setSortDir] = useState<string>('asc');
   const navigate = useNavigate();
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchBooks = async () => {
-      const categoryParams = selectedCategories
-        .map((cat) => `bookCategories=${encodeURIComponent(cat)}`)
-        .join('&');
+    const loadBooks = async () => {
 
-      const sortQuery =
-        sortBy === 'title' ? `&sortBy=${sortBy}&sortDir=${sortDir}` : '';
-      const response = await fetch(
-        `https://localhost:5000/bookstore/allbooks?pageSize=${pageSize}&pageNum=${pageNum}${sortQuery}&${selectedCategories.length ? `&${categoryParams}` : ''}`
-      );
-      const data = await response.json();
+      try {
+        setLoading(true)
+        const data = await fecthBooks(pageSize, pageNum, sortBy, sortDir, selectedCategories);
 
-      if (
-        selectedCategories.length > 0 &&
-        pageNum > 1 &&
-        data.books.length === 0
-      ) {
-        setPageNum(1);
-        return;
+        setBooks(data.books);
+        setTotalPages(Math.ceil(data.totalNumBooks / pageSize));
+      } catch (error) {
+        setError((error as Error).message)
+      } finally {
+        setLoading(false);
       }
 
-      setBooks(data.books);
-      setTotalPages(Math.ceil(data.totalNumBooks / pageSize));
     };
 
-    fetchBooks();
+    loadBooks();
   }, [pageSize, pageNum, sortBy, sortDir, selectedCategories]);
+
+  if (loading) return <p>Laoding books...</p>
+  if (error) return <p className='text-red-500'>Error: {error}</p>
 
   return (
     <>
