@@ -5,6 +5,8 @@ interface FetchBooksResponse {
     totalNumBooks: number;
 }
 
+const API_URL = `https://bookstore-backend-fsdpf4gaeehffwb3.centralus-01.azurewebsites.net/BookStore`
+
 // ============= LOAD BOOKS =============
 export const fecthBooks = async (
     pageSize: number,
@@ -21,7 +23,7 @@ export const fecthBooks = async (
         const sortQuery =
             sortBy === 'title' ? `&sortBy=${sortBy}&sortDir=${sortDir}` : '';
         const response = await fetch(
-            `https://localhost:5000/BookStore/allbooks?pageSize=${pageSize}&pageNum=${pageNum}${sortQuery}&${selectedCategories.length ? `&${categoryParams}` : ''}`
+            `${API_URL}/allbooks?pageSize=${pageSize}&pageNum=${pageNum}${sortQuery}&${selectedCategories.length ? `&${categoryParams}` : ''}`
         );
 
         if (!response.ok) {
@@ -39,7 +41,7 @@ export const fecthBooks = async (
 // ============= DELETE BOOK =============
 export const deleteBook = async (bookId: number): Promise<void> => {
     try {
-        const response = await fetch(`https://localhost:5000/BookStore/DeleteBook/${bookId}`, { method: 'DELETE' });
+        const response = await fetch(`${API_URL}/DeleteBook/${bookId}`, { method: 'DELETE' });
         if (!response.ok) {
             throw new Error('Failed to delete project');
         }
@@ -52,7 +54,7 @@ export const deleteBook = async (bookId: number): Promise<void> => {
 // ============= ADD BOOK =============
 export const addBook = async (book: Books): Promise<Books> => {
     try {
-        const response = await fetch('https://localhost:5000/BookStore/AddBook', {
+        const response = await fetch(`${API_URL}/AddBook`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -74,7 +76,7 @@ export const addBook = async (book: Books): Promise<Books> => {
 // ============= LOAD CATEGORIES =============
 export const fetchBookCategories = async (): Promise<string[]> => {
     try {
-        const response = await fetch('https://localhost:5000/BookStore/GetBookCategories');
+        const response = await fetch(`${API_URL}/GetBookCategories`);
 
         if (!response.ok) {
             throw new Error('Failed to fetch categories');
@@ -90,7 +92,7 @@ export const fetchBookCategories = async (): Promise<string[]> => {
 // ============= EDIT BOOK =============
 export const updateBook = async (bookId: number, updatedBook: Books): Promise<Books> => {
     try {
-        const response = await fetch(`https://localhost:5000/bookstore/UpdateBook/${bookId}`, {
+        const response = await fetch(`${API_URL}/UpdateBook/${bookId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

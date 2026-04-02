@@ -129,3 +129,10 @@
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/obj/Debug/net10.0/mission11.API.pdb
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/obj/Debug/net10.0/mission11.API.genruntimeconfig.cache
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/obj/Debug/net10.0/ref/mission11.API.dll
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/bin/Debug/net10.0/publish/web.config
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/bin/Debug/net10.0/publish/appsettings.Development.json
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/bin/Debug/net10.0/publish/appsettings.json
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/bin/Debug/net10.0/publish/mission11.API.deps.json
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/bin/Debug/net10.0/publish/mission11.API.runtimeconfig.json
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/bin/Debug/net10.0/publish/mission11.API.staticwebassets.endpoints.json
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/bin/Debug/net10.0/Bookstore.sqlite
