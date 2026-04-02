@@ -97,6 +97,22 @@ export const fetchBookCategories = async (): Promise<string[]> => {
     }
 };
 
+// ============= LOAD SINGLE BOOK =============
+export const fetchBookById = async (bookId: number): Promise<Books> => {
+    try {
+        const response = await fetch(`${API_URL}/Book/${bookId}`);
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch book');
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching book:', error);
+        throw error;
+    }
+};
+
 // ============= EDIT BOOK =============
 export const updateBook = async (bookId: number, updatedBook: Books): Promise<Books> => {
     try {

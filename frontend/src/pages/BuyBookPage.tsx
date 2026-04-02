@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import WelcomeBand from '../components/WelcomeBand';
 import type { CartItem } from '../types/CartItem';
 import { useCart } from '../context/CartContext';
+import { fetchBookById } from '../api/BooksAPI';
 
 function BuyBookPage() {
   const navigate = useNavigate();
@@ -26,17 +27,8 @@ function BuyBookPage() {
 
       try {
         setIsLoadingPrice(true);
-        const response = await fetch(
-          `https://localhost:5000/bookstore/book/${bookId}`
-        );
-
-        if (!response.ok) {
-          setUnitPrice(null);
-          return;
-        }
-
-        const data = await response.json();
-        const priceValue = Number(data.price ?? data.Price);
+        const data = await fetchBookById(Number(bookId));
+        const priceValue = Number(data.price);
         setUnitPrice(Number.isFinite(priceValue) ? priceValue : null);
       } catch {
         setUnitPrice(null);
