@@ -1,4 +1,5 @@
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/publish/mission11.API
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/publish/publish/publish/publish/web.config
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/publish/publish/publish/web.config
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/publish/publish/web.config
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/publish/appsettings.Development.json
@@ -13,6 +14,11 @@
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/publish/publish/publish/mission11.API.deps.json
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/publish/publish/publish/mission11.API.runtimeconfig.json
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/publish/publish/publish/mission11.API.staticwebassets.endpoints.json
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/publish/publish/publish/publish/appsettings.Development.json
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/publish/publish/publish/publish/appsettings.json
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/publish/publish/publish/publish/mission11.API.deps.json
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/publish/publish/publish/publish/mission11.API.runtimeconfig.json
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/publish/publish/publish/publish/mission11.API.staticwebassets.endpoints.json
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/publish/Bookstore.sqlite
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/publish/mission11.API.dll
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/publish/mission11.API.runtimeconfig.json

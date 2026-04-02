@@ -96,11 +96,17 @@ namespace mission11.API.Controllers
         {
             var existingBook = _context.Books.Find(bookId);
 
+            if (existingBook == null)
+            {
+                return NotFound(new { message = "Book not found" });
+            }
+
             existingBook.Title = updateBook.Title;
             existingBook.Author = updateBook.Author;
             existingBook.Publisher = updateBook.Publisher;
             existingBook.Isbn = updateBook.Isbn;
             existingBook.Classification = updateBook.Classification;
+            existingBook.Category = updateBook.Category;
             existingBook.PageCount = updateBook.PageCount;
             existingBook.Price = updateBook.Price;
 

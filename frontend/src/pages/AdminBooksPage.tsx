@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Pagination from "../components/Paginations";
 import { deleteBook, fecthBooks } from "../api/BooksAPI";
 import type { Books } from "../types/books";
@@ -16,6 +16,7 @@ const AdminBooksPage = () => {
     const [error, setError] = useState<string | null>(null);
     const [addForm, setAddForm] = useState(false);
     const [editingBook, setEditingBook] = useState<Books | null>(null);
+    const editFormRef = useRef<HTMLDivElement | null>(null);
 
 
 
@@ -38,6 +39,12 @@ const AdminBooksPage = () => {
 
         loadBooks();
     }, [pageSize, pageNum, sortBy, sortDir]);
+
+    useEffect(() => {
+        if (editingBook && editFormRef.current) {
+            editFormRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    }, [editingBook]);
 
     const handleDelete = async (bookId: number) => {
         const confirmDelete = window.confirm('Are you sure you want to delete this book?');
@@ -90,7 +97,7 @@ const AdminBooksPage = () => {
 
         {/* ==== DISPLAY EDIT BOOK FORM */}
         {editingBook && (
-            <div className="book-form-wrapper">
+            <div className="book-form-wrapper" ref={editFormRef}>
                 <EditBookForm
                     book={editingBook} onSuccess={() => {
                         setEditingBook(null);
