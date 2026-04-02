@@ -17,7 +17,7 @@ builder.Services.AddCors(options =>
 options.AddPolicy("AllowAnyHeader",
 policy =>
 {
-    policy.WithOrigins("http://localhost:3000", "")
+    policy.WithOrigins("http://localhost:3000", "https://wonderful-sea-07686a210.4.azurestaticapps.net")
     .AllowAnyMethod()
     .AllowAnyHeader();
 }
