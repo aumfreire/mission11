@@ -1,24 +1,56 @@
 .category-filter {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    font-family: Arial, Helvetica, sans-serif;
+    gap: 1rem;
+}
+
+.category-filter__header h5 {
+    margin: 0;
+    color: #0f172a;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.category-filter__header p {
+    margin: 0.4rem 0 0;
+    color: #64748b;
+    font-size: 0.92rem;
+    line-height: 1.45;
 }
 
 .category-list {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+    display: grid;
+    gap: 0.7rem;
 }
 
 .category-item {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 0.75rem;
+    padding: 0.7rem 0.85rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.9rem;
+    background: #fff;
+    transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.category-item:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+    transform: translateY(-1px);
 }
 
 .category-checkbox {
     flex-shrink: 0;
-    width: 16px;
-    height: 15px;
+    width: 1rem;
+    height: 1rem;
+    accent-color: #2563eb;
+}
+
+.category-item label {
+    margin: 0;
+    color: #334155;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
 }

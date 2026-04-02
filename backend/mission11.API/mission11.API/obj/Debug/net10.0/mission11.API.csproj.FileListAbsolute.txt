@@ -142,3 +142,9 @@
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/bin/Debug/net10.0/publish/publish/mission11.API.deps.json
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/bin/Debug/net10.0/publish/publish/mission11.API.runtimeconfig.json
 /Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/bin/Debug/net10.0/publish/publish/mission11.API.staticwebassets.endpoints.json
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/bin/Debug/net10.0/publish/publish/publish/web.config
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/bin/Debug/net10.0/publish/publish/publish/appsettings.Development.json
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/bin/Debug/net10.0/publish/publish/publish/appsettings.json
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/bin/Debug/net10.0/publish/publish/publish/mission11.API.deps.json
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/bin/Debug/net10.0/publish/publish/publish/mission11.API.runtimeconfig.json
+/Users/augusto.freire/CS Projects/IS 413/mission11/backend/mission11.API/mission11.API/bin/Debug/net10.0/publish/publish/publish/mission11.API.staticwebassets.endpoints.json

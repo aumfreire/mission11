@@ -14,7 +14,7 @@ const AdminBooksPage = () => {
     const [sortDir, setSortDir] = useState<string>('asc');
     const [books, setBooks] = useState<Books[]>([]);
     const [error, setError] = useState<string | null>(null);
-    const [showForm, setShowForm] = useState(false);
+    const [addForm, setAddForm] = useState(false);
     const [editingBook, setEditingBook] = useState<Books | null>(null);
 
 
@@ -46,7 +46,7 @@ const AdminBooksPage = () => {
         try {
             await deleteBook(bookId);
             setBooks(books.filter((p) => p.bookId !== bookId))
-        } catch (error) {
+        } catch {
             alert('Failed to delete project. Please try again.');
 
         }
@@ -59,29 +59,49 @@ const AdminBooksPage = () => {
         <h1>Admin - Bookstore</h1>
 
         {/* ==== DISPLAY ADD BOOK FORM */}
-        {!showForm && (<button className="btn btn-success mb-3" onClick={() => setShowForm(true)}>Add Book</button>)}
-
-        {showForm && (
-            <NewBookForm
-                onSuccess={() => {
-                    setShowForm(false);
-                    fecthBooks(pageSize, pageNum, sortBy, sortDir, [])
-                        .then((data) => setBooks(data.books))
+        {!addForm && !editingBook && (
+            <button
+                className="btn btn-success btn-sm mb-3"
+                style={{
+                    alignSelf: "center",
+                    width: "fit-content",
+                    display: "inline-block",
+                    padding: "0.3rem 0.7rem",
+                    fontSize: "0.82rem"
                 }}
-                onCancel={() => setShowForm(false)}
-            />
+                onClick={() => setAddForm(true)}
+            >
+                Add Book
+            </button>
+        )}
+
+        {addForm && (
+            <div className="book-form-wrapper">
+                <NewBookForm
+                    onSuccess={() => {
+                        setAddForm(false);
+                        fecthBooks(pageSize, pageNum, sortBy, sortDir, [])
+                            .then((data) => setBooks(data.books))
+                    }}
+                    onCancel={() => setAddForm(false)}
+                />
+            </div>
         )}
 
         {/* ==== DISPLAY EDIT BOOK FORM */}
-        {editingBook && (<EditBookForm
-            book={editingBook} onSuccess={() => {
-                setEditingBook(null);
-                fecthBooks(pageSize, pageNum, sortBy, sortDir, [])
-                    .then((data) => setBooks(data.books))
+        {editingBook && (
+            <div className="book-form-wrapper">
+                <EditBookForm
+                    book={editingBook} onSuccess={() => {
+                        setEditingBook(null);
+                        fecthBooks(pageSize, pageNum, sortBy, sortDir, [])
+                            .then((data) => setBooks(data.books))
 
-            }}
-            onCancel={() => setEditingBook(null)}
-        />)}
+                    }}
+                    onCancel={() => setEditingBook(null)}
+                />
+            </div>
+        )}
 
 
 
@@ -114,7 +134,15 @@ const AdminBooksPage = () => {
                         <td>{b.pageCount}</td>
                         <td>${b.price}</td>
                         <td>
-                            <button className="btn btn-primary btn-sm w-100 mb-1" onClick={() => setEditingBook(b)}>Edit</button>
+                            <button
+                                className="btn btn-primary btn-sm w-100 mb-1"
+                                onClick={() => {
+                                    setAddForm(false);
+                                    setEditingBook(b);
+                                }}
+                            >
+                                Edit
+                            </button>
                             <button className="btn btn-danger btn-sm w-100" onClick={() => handleDelete(b.bookId)}>Delete</button></td>
 
                     </tr>

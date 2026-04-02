@@ -82,7 +82,15 @@ export const fetchBookCategories = async (): Promise<string[]> => {
             throw new Error('Failed to fetch categories');
         }
 
-        return await response.json();
+        const categories = (await response.json()) as string[];
+
+        return Array.from(
+            new Set(
+                categories
+                    .map((category) => category.trim())
+                    .filter((category) => category.length > 0)
+            )
+        );
     } catch (error) {
         console.error('Error fetching categories:', error);
         throw error;
